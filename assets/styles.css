@@ -1,0 +1,91 @@
+:root{
+  --bg:#0b1220; /* dark blue/black */
+  --card:#0f1724;
+  --text:#e6eef8;
+  --muted:#9fb6d6;
+  --accent:#0ea5ff; /* electric blue */
+  --accent-2:#d4af37; /* gold accent */
+  --glass: rgba(255,255,255,0.04);
+  --radius:12px;
+  --max-width:1100px;
+  --gap:28px;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#05070a 0%,var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+
+/* container */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:48px 20px;
+}
+
+/* header */
+.site-header{position:relative;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.03);background:transparent}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-size:1.125rem}
+.nav a{color:var(--muted);margin-left:18px;text-decoration:none}
+.nav .btn-ghost{border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px}
+
+/* sticky CTA */
+.sticky-cta{position:fixed;right:20px;top:90px;z-index:60}
+.sticky-cta .btn{box-shadow:0 8px 24px rgba(14,165,255,0.12)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600;cursor:pointer}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041025;border:box-shadow:0 6px 18px rgba(13,88,144,0.12)}
+.btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.btn-ghost{background:transparent;color:var(--muted);border:0}
+
+/* hero */
+.hero{padding:64px 0 80px}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:var(--gap);align-items:center}
+.hero h1{font-size:2rem;margin:0 0 16px;letter-spacing:-0.02em}
+.lead{color:var(--muted);max-width:680px}
+.hero-ctas{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.features-list{list-style:none;padding:0;margin:20px 0 0;color:var(--muted)}
+.illustration{width:100%;height:auto;border-radius:10px}
+
+/* sections */
+.section{padding:48px 0}
+.reveal{opacity:0;transform:translateY(14px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;padding:0;list-style:none;color:var(--muted)}
+
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:16px}
+.portfolio-item{background:var(--card);padding:16px;border-radius:10px}
+.screenshot.placeholder{height:120px;background:var(--glass);display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--muted)}
+
+/* pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.price-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px}
+.price{font-weight:700;margin-top:12px}
+
+/* contact form */
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.contact-form input,.contact-form textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.contact-form textarea{grid-column:1/-1;min-height:120px}
+.contact-ctas{display:flex;gap:12px;margin-top:8px}
+
+/* footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:22px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+
+/* responsiveness */
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:20px}
+  .contact-form{grid-template-columns:1fr}
+  .sticky-cta{display:none}
+}
