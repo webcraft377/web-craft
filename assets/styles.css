@@ -67,6 +67,8 @@ body{
 .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:16px}
 .portfolio-item{background:var(--card);padding:16px;border-radius:10px}
 .screenshot.placeholder{height:120px;background:var(--glass);display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--muted)}
+.screenshot{width:100%;height:auto;border-radius:8px;background:var(--glass);display:block}
+.portfolio-item .caption{margin-top:8px;color:var(--muted);font-size:0.95rem}
 
 /* pricing */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
@@ -88,4 +90,5 @@ body{
   .hero-inner{grid-template-columns:1fr;gap:20px}
   .contact-form{grid-template-columns:1fr}
   .sticky-cta{display:none}
+  .portfolio-item .caption{font-size:0.9rem}
 }
